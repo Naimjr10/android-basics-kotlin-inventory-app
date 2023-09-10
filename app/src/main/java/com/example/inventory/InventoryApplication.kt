@@ -26,5 +26,5 @@ class InventoryApplication : Application() {
     // you first need/access the reference (rather than when the app starts).
     // This will create the database (the physical database on the disk) on the first access.
     val database: ItemRoomDatabase by lazy { ItemRoomDatabase.getDatabase(this) }
-    
+
 }
