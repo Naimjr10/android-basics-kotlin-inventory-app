@@ -35,4 +35,7 @@ interface ItemDao {
                                      // The Room keeps this Flow updated for you, which means
                                      // you only need to explicitly get the data once.
 
+    @Query("SELECT * from item ORDER BY name ASC")
+    fun getItems(): Flow<List<Item>>
+
 }

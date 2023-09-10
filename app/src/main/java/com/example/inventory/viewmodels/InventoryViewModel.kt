@@ -1,12 +1,16 @@
 package com.example.inventory.viewmodels
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.inventory.data.Item
 import com.example.inventory.data.ItemDao
 import kotlinx.coroutines.launch
 
 class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
+
+    val allItems: LiveData<List<Item>> = itemDao.getItems().asLiveData()
 
     /*
      * To interact with the database off the main thread,
