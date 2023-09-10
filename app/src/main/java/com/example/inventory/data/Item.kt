@@ -7,7 +7,7 @@ import java.text.NumberFormat
 
 // 'Entity' is equal to 'Table' in database
 @Entity(tableName = "item")
-class Item(
+data class Item(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "name") val itemName: String,
     @ColumnInfo(name = "price") val itemPrice: Double,
